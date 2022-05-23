@@ -19,4 +19,5 @@ async def on_message(message):
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
 
+print(cfg["MAIN"]["discord_token"])
 client.run(cfg["MAIN"]["discord_token"])
