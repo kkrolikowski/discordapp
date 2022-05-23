@@ -1,4 +1,9 @@
+import os
 import discord
+import configparser
+
+cfg = configparser.ConfigParser()
+cfg.read(os.path.join(os.path.dirname(__file__), 'conf/app.conf'))
 
 client = discord.Client()
 
@@ -14,4 +19,4 @@ async def on_message(message):
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
 
-client.run('your token here')
+client.run(cfg["MAIN"]["discord_token"])
