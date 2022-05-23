@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  publish_to_dockerhub:
     runs-on: ubuntu-latest
     steps:
     - name: Chechout code
