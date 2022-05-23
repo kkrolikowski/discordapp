@@ -1,6 +1,6 @@
 import discord
 
-class DiscrodBot(discord.Client):
+class DiscordBot(discord.Client):
     async def on_ready(self):
         print('We have logged in as {0.user}'.format(self.user))
 
