@@ -6,8 +6,6 @@ cfg = configparser.ConfigParser()
 cfg.read(os.path.join(os.path.dirname(__file__), 'conf/app.conf'))
 
 discord_token = cfg["MAIN"]["discord_token"]
-print("discord token:", discord_token)
-
 
 client = discord.Client()
 
