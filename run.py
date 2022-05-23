@@ -5,6 +5,10 @@ import configparser
 cfg = configparser.ConfigParser()
 cfg.read(os.path.join(os.path.dirname(__file__), 'conf/app.conf'))
 
+discord_token = cfg["MAIN"]["discord_token"]
+print(discord_token)
+
+
 client = discord.Client()
 
 @client.event
@@ -19,5 +23,4 @@ async def on_message(message):
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
 
-print(cfg["MAIN"]["discord_token"])
-client.run(cfg["MAIN"]["discord_token"])
+client.run(discord_token)
