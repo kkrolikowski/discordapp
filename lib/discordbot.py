@@ -9,4 +9,4 @@ class DiscordBot(discord.Client):
             return
 
         if message.content.startswith('$hello'):
-            await message.channel.send('Siema wariacie, jaka parówa? :D')
+            await message.channel.send('Siema wariacie')
