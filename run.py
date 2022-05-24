@@ -7,7 +7,7 @@ from lib.edziennik import Edziennik
 cfg = configparser.ConfigParser()
 cfg.read(os.path.join(os.path.dirname(__file__), 'conf/app.conf'))
 
-edziennik = Edziennik(cfg["VULCAN"]["vulcan_token"], cfg["VULCAN"]["vulcan_symbol"], cfg["VULCAN"]["vulcan_pin"])
+edziennik = Edziennik(**cfg["VULCAN"])
 print(edziennik.pin)
 print(edziennik.symbol)
 print(edziennik.token)
