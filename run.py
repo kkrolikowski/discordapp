@@ -7,12 +7,12 @@ from lib.edziennik import Edziennik
 cfg = configparser.ConfigParser()
 cfg.read(os.path.join(os.path.dirname(__file__), 'conf/app.conf'))
 
-datadir = os.path.join(os.path.dirname(__file__), "data")
-edziennik = Edziennik(datadir, **cfg["VULCAN"])
+credentials_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), cfg["VULCAN"]["credentials_dir"])
+edziennik = Edziennik(credentials_dir, **cfg["VULCAN"])
 print(edziennik.pin)
 print(edziennik.symbol)
 print(edziennik.token)
-print(edziennik.datadir)
+print(edziennik.credentials_dir)
 
 discord_token = cfg["MAIN"]["discord_token"]
 bot = DiscordBot()
