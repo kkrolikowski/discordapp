@@ -12,4 +12,8 @@ class DiscordBot(discord.Client):
             await message.channel.send('Siema wariacie')
         if message.content.startswith('$register'):
             await message.channel.send("Rejestruję konto w edzienniku dla " + str(message.author.nick))
-            await message.channel.send(str(message.content))
+            arguments = message.content.split(" ")
+            if len(arguments) < 4:
+                await message.channel.send("Aby zarejestrować aplikację w edzienniku musisz podać: Token, Miasto i PIN")
+            else:
+                await message.channel.send("Token: " + arguments[1], ", Miasto: ", arguments[2], ", PIN: ", arguments[3])
