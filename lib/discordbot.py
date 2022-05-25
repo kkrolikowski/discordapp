@@ -11,5 +11,4 @@ class DiscordBot(discord.Client):
         if message.content.startswith('$hello'):
             await message.channel.send('Siema wariacie')
         if message.content.startswith('$register'):
-            message_user = message.client
             await message.channel.send("Rejestruję konto w edzienniku dla " + str(message.author.name))
