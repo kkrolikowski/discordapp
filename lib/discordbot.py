@@ -16,4 +16,4 @@ class DiscordBot(discord.Client):
             if len(arguments) < 4:
                 await message.channel.send("Aby zarejestrować aplikację w edzienniku musisz podać: Token, Miasto i PIN")
             else:
-                await message.channel.send("Token: " + arguments[1], ", Miasto: ", arguments[2], ", PIN: ", arguments[3])
+                await message.channel.send("Token: " + arguments[1] + ", Miasto: " + arguments[2] + ", PIN: " + arguments[3])
