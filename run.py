@@ -1,5 +1,4 @@
 import os
-import discord
 import configparser
 from lib.discordbot import DiscordBot
 from lib.edziennik import Edziennik
