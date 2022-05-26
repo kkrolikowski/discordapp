@@ -27,4 +27,4 @@ jobs:
     steps:
       - name: Reload discordapp service
         run: |-
-          curl -s -o /dev/null -I -w "%{http_code}" http://137.74.115.94:9000/hooks/redeploy-discordapp
+          curl -s -o /dev/null -I -w "%{http_code}" ${{ secrets.DEPLOY_HOOK }}
