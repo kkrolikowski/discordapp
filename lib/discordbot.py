@@ -13,9 +13,11 @@ class DiscordBot(discord.Client):
         if message.content.startswith('$register'):
             arguments = message.content.split(" ")
             if len(arguments) < 4:
-                await message.channel.send("""Aby zarejestrować aplikację w edzienniku musisz zalogować się w przeglądarce do systemu Vulcan i 
-                                            wygenerować nowy dostęp mobilny. Na spodzie kodu QR znajdziesz informacjie: Token, Symbol i PIN.
-                                            Musisz je kolejno po spacji wpisać: $register token symbol pin""")
+                await message.channel.send(
+                    """Aby zarejestrować aplikację w edzienniku musisz zalogować się w przeglądarce do systemu Vulcan i 
+                        wygenerować nowy dostęp mobilny. Na spodzie kodu QR znajdziesz informacjie: Token, Symbol i PIN.
+                        Musisz je kolejno po spacji wpisać: $register token symbol pin""".replace("\n", " ").replace("\t", " ")
+                                        )
             else:
                 await message.channel.send("Rejestruję konto w edzienniku dla " + str(message.author.nick))
                 await message.channel.send("Token: " + arguments[1] + ", Miasto: " + arguments[2] + ", PIN: " + arguments[3])
