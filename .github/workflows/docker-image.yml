@@ -22,6 +22,7 @@ jobs:
         push: true
         tags: devkrolikowski/discordapp:latest
   deploy_on_vps:
+    needs: publish_to_dockerhub
     runs-on: ubuntu-latest
     steps:
       - name: Reload discordapp service
