@@ -13,9 +13,9 @@ class DiscordBot(discord.Client):
         if message.content.startswith('$register'):
             arguments = message.content.split(" ")
             if len(arguments) < 4:
-                help_message = """
-                Aby zarejestrować aplikację w edzienniku musisz zalogować się w przeglądarce do systemu Vulcan i 
-                wygenerować nowy dostęp mobilny. Na spodzie kodu QR znajdziesz informacjie: Token, Symbol i PIN. 
+                help_message = """\
+                Aby zarejestrować aplikację w edzienniku musisz zalogować się w przeglądarce do systemu Vulcan i
+                wygenerować nowy dostęp mobilny. Na spodzie kodu QR znajdziesz informacjie: Token, Symbol i PIN.
                 Musisz je kolejno po spacji wpisać: $register token symbol pin
                 """.replace("\n", "")
                 await message.channel.send(help_message)
