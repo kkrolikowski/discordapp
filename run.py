@@ -39,5 +39,6 @@ async def main():
                 await message.channel.send("Token: " + arguments[1] + ", Miasto: " + arguments[2] + ", PIN: " + arguments[3])
 
     client.run(cfg["MAIN"]["discord_token"])
+
 if __name__ == '__main__':
-    asyncio.run(main())
+    main()
