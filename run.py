@@ -21,7 +21,7 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    if message.content == "$hello {}".format(client.user.display_name):
+    if message.content == "$hello @{}".format(client.user.display_name):
         await message.channel.send('Siema {}!'.format(message.author.nick))
 
     if message.content.startswith('$register'):
