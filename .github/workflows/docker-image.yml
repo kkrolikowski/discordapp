@@ -21,3 +21,9 @@ jobs:
       with:
         push: true
         tags: devkrolikowski/discordapp:latest
+  deploy_on_vps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reload discordapp service
+        run: |-
+          curl http://137.74.115.94:9000/hooks/redeploy-webhook
