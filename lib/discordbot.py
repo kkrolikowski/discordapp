@@ -15,8 +15,8 @@ class DiscordBot(discord.Client):
             if len(arguments) < 4:
                 await message.channel.send(
                     """Aby zarejestrować aplikację w edzienniku musisz zalogować się w przeglądarce do systemu Vulcan i 
-                        wygenerować nowy dostęp mobilny. Na spodzie kodu QR znajdziesz informacjie: Token, Symbol i PIN. 
-                        Musisz je kolejno po spacji wpisać: $register token symbol pin""".replace("\n", " ").replace("\t", "")
+                    wygenerować nowy dostęp mobilny. Na spodzie kodu QR znajdziesz informacjie: Token, Symbol i PIN. 
+                    Musisz je kolejno po spacji wpisać: $register token symbol pin""".replace("\n", "")
                 )
             else:
                 await message.channel.send("Rejestruję konto w edzienniku dla " + str(message.author.nick))
