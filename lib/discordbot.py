@@ -17,7 +17,7 @@ class DiscordBot(discord.Client):
                 Aby zarejestrować aplikację w edzienniku musisz zalogować się w przeglądarce do systemu Vulcan i
                 wygenerować nowy dostęp mobilny. Na spodzie kodu QR znajdziesz informacjie: Token, Symbol i PIN.
                 Musisz je kolejno po spacji wpisać: $register token symbol pin
-                """.replace("\n", "")
+                """.replace("\n", " ").strip()
                 await message.channel.send(help_message)
             else:
                 await message.channel.send("Rejestruję konto w edzienniku dla " + str(message.author.nick))
