@@ -28,7 +28,7 @@ async def on_message(message):
         await message.channel.send('Siema {}!'.format(message.author.nick))
 
     if message.content.startswith('$register'):
-        arguments = await message.content.split(" ")
+        arguments = message.content.split(" ")
         if len(arguments) < 4:
             help_message = """\
             Aby zarejestrować aplikację w edzienniku musisz zalogować się w przeglądarce do systemu Vulcan i
