@@ -1,4 +1,5 @@
 import discord
+from .edziennik import Edziennik
 
 class DiscordBot(discord.Client):
     async def on_ready(self):
