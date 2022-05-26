@@ -8,3 +8,6 @@ from vulcan import Vulcan
 class Edziennik:
     def __init__(self, credentials_dir,):
         self.credentials_dir = credentials_dir
+    
+    def register(self, regdata):
+        print(regdata.keys())

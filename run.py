@@ -14,6 +14,8 @@ client = discord.Client()
 edziennik = Edziennik(credentials_dir)
 print(edziennik.credentials_dir)
 
+regdata = {}
+
 @client.event
 async def on_ready():
     print("Bot {} connected to server.".format(client.user.display_name))
@@ -26,7 +28,7 @@ async def on_message(message):
         await message.channel.send('Siema {}!'.format(message.author.nick))
 
     if message.content.startswith('$register'):
-        arguments = message.content.split(" ")
+        arguments = await message.content.split(" ")
         if len(arguments) < 4:
             help_message = """\
             Aby zarejestrować aplikację w edzienniku musisz zalogować się w przeglądarce do systemu Vulcan i
@@ -35,7 +37,8 @@ async def on_message(message):
             """.replace("\n", " ").strip()
             await message.channel.send(help_message)
         else:
-            await message.channel.send("Rejestruję konto w edzienniku dla " + str(message.author.nick))
-            await message.channel.send("Token: " + arguments[1] + ", Miasto: " + arguments[2] + ", PIN: " + arguments[3])
+            regdata[message.author.nick] = arguments
+
+edziennik.register(regdata)
 
 client.run(cfg["MAIN"]["discord_token"])
