@@ -38,8 +38,7 @@ async def main():
                 await message.channel.send("Rejestruję konto w edzienniku dla " + str(message.author.nick))
                 await message.channel.send("Token: " + arguments[1] + ", Miasto: " + arguments[2] + ", PIN: " + arguments[3])
 
-
+    client.run(cfg["MAIN"]["discord_token"])
 if __name__ == '__main__':
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     asyncio.run(main())
-    client.run(cfg["MAIN"]["discord_token"])
