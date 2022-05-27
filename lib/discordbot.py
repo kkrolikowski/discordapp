@@ -21,4 +21,4 @@ class DiscordBot(discord.Client):
                 await message.channel.send(help_message)
             else:
                 await message.channel.send("Rejestruję konto w edzienniku dla " + str(message.author.nick))
-                await message.channel.send("Token: " + arguments[1] + ", Miasto: " + arguments[2] + ", PIN: " + arguments[3])
+                return { message.author.nick: arguments }
